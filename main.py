@@ -50,7 +50,7 @@ def _binary_search(mylist, key, left, right):
 
 		else:
 			return _binary_search(mylist, key, (middle -1), left)
-			
+
 	if left > right:
 		return -1
 
@@ -114,8 +114,8 @@ def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
 		linear_search_time = time_search(linear_search, list, - 1)
 		binary_search_time = time_search(binary_search, list, -1)
 		run_times.append(sizes[i])
-		run_times.append(linear_search_time)
-		run_times.append(binary_search_time)
+		run_times.append([linear_search_time])
+		run_times.append([binary_search_time])
 
 	return run_times
 
