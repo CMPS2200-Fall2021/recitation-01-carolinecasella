@@ -38,12 +38,12 @@ def _binary_search(mylist, key, left, right):
 	Returns:
 	  index of key in mylist, or -1 if not present.
 	"""
-	my_list = []
+
 	if left <= right:
 		middle = (left+right)//2
 
 		if my_list(middle) == key:
-			return my_list(middle)
+			return mylist(middle)
 
 		if my_list(middle)<key:
 			return binary_search(my_list, key, (middle)-1)
@@ -83,7 +83,7 @@ def time_search(search_fn, mylist, key):
 	  search function on this input.
 	"""
 	time_beg = time.time()
-	search_fn(my_list, key)
+	search_fn(mylist, key)
 	time_end = time.time()
 
 	time_tot = time_end - time_beg
