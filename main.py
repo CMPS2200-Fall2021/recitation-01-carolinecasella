@@ -108,7 +108,7 @@ def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
 	"""
 
 	run_times = []
-
+	tuples = []
 	for i in range(len(sizes)):
 		element_list = [i for i in range(0,int(sizes[i]))]
 		linear_search_time = time_search(linear_search, list, - 1)
@@ -116,6 +116,8 @@ def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
 		run_times.append(sizes[i])
 		run_times.append([linear_search_time])
 		run_times.append([binary_search_time])
+
+		tuples.append(run_times)
 
 	return run_times
 
@@ -134,3 +136,5 @@ def test_compare_search():
 	assert res[1][0] == 100
 	assert res[0][1] < 1
 	assert res[1][1] < 1
+
+compare_search()
