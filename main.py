@@ -38,6 +38,8 @@ def _binary_search(mylist, key, left, right):
 	Returns:
 	  index of key in mylist, or -1 if not present.
 	"""
+	if right < left:
+		return -1
 
 	if left <= right:
 		middle = (left+right)//2
@@ -49,10 +51,7 @@ def _binary_search(mylist, key, left, right):
 			return _binary_search(mylist, key, middle +1, right)
 
 		else:
-			return _binary_search(mylist, key, (middle -1), left)
-
-	if left > right:
-		return -1
+			return _binary_search(mylist, key, left, middle -1)
 
 	else:
 		return -1
