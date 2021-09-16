@@ -108,7 +108,7 @@ def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
 	run_times = []
 
 	for i in range(len(sizes)):
-		element_list = [i for i in range(int(sizes[i]))]
+		element_list = [i for i in range(0,int(sizes[i]))]
 		linear_search_time = time_search(linear_search, list, - 1)
 		binary_search_time = time_search(binary_search, list, -1)
 		run_times.append(sizes[i])
