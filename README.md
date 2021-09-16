@@ -61,16 +61,16 @@ We'll compare the running times of `linear_search` and `binary_search` empirical
 **TODO: add your timing results here**
 
 - [ ] 9. The theoretical worst-case running time of linear search is $O(n)$ and binary search is $O(log_2(n))$. Do these theoretical running times match your empirical results? Why or why not?
-
+These theoretical running times do not match my empirical results exactly, which does not necessarily mean that they are incorrect. Since the run times are theoretical and the worst case is the absolute worst that it can perform does not mean that they are always going to perform this way.
 
 **TODO: your answer goes here**
 
 - [ ] 10. Binary search assumes the input list is already sorted. Assume it takes $\Theta(n^2)$ time to sort a list of length $n$. Suppose you know ahead of time that you will search the same list $k$ times.
   + What is worst-case complexity of searching a list of $n$ elements $k$ times using linear search?
-
+      O(kn)
   **TODO: your answer goes here**
   + For binary search?
-
+      n^2 +klog(n)
   **TODO: your answer goes here**
   + For what values of $k$ is it more efficient to first sort and then use binary search versus just using linear search without sorting?
       k < (-n^2/(log_2(n)-n))
