@@ -42,16 +42,19 @@ def _binary_search(mylist, key, left, right):
 	if left <= right:
 		middle = (left+right)//2
 
-		if mylist(middle) == key:
-			return key
+		if mylist[middle] == key:
+			return middle
 
-		if mylist(middle)<key:
-			return binary_search(my_list, key, (middle)-1)
+		else if mylist[middle]<key:
+			return _binary_search(my_list, key, middle +1, right)
 
-		if mylist(middle)>key:
-			return binary_search(my_list, key, (middle)+1)
+		else:
+			return _binary_search(my_list, key, (middle -1), left)
 
 	else:
+		return -1
+
+	if left > right:
 		return -1
 
 
@@ -85,9 +88,8 @@ def time_search(search_fn, mylist, key):
 	time_beg = time.time()
 	search_fn(mylist, key)
 	time_end = time.time()
-
-	time_tot = time_end - time_beg
-	return (time_tot * 1000)
+	time_tot = (time_end - time_beg)
+	return time_tot * 1000
 
 def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
 	"""
