@@ -64,7 +64,7 @@ def test_binary_search():
 	assert binary_search([1,2,3,4,5], 6) == -1
 	### TODO: add two more tests here.
 	assert binary_search([1,2,3,4,5], 3) == 2
-	assert binary_search([1,2,3,4,5], 2) == 1
+	assert binary_search([1,2,3,4,5], 10) == -1
 
 
 def time_search(search_fn, mylist, key):
@@ -108,16 +108,11 @@ def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
 	"""
 
 	run_times = []
-	tuples = []
 	for i in range(len(sizes)):
 		element_list = [i for i in range(0,int(sizes[i]))]
 		linear_search_time = time_search(linear_search, list, - 1)
 		binary_search_time = time_search(binary_search, list, -1)
-		run_times.append(sizes[i])
-		run_times.append([linear_search_time])
-		run_times.append([binary_search_time])
-
-		tuples.append(run_times)
+		run_times.append([sizes[i], linear_search_time, binary_search_time])
 
 	return run_times
 
