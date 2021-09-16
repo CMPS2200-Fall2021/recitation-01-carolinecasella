@@ -43,7 +43,7 @@ def _binary_search(mylist, key, left, right):
 		middle = (left+right)//2
 
 		if my_list(middle) == key:
-			return mylist(middle)
+			return key
 
 		if my_list(middle)<key:
 			return binary_search(my_list, key, (middle)-1)
