@@ -45,7 +45,7 @@ def _binary_search(mylist, key, left, right):
 		if key == mylist[middle]:
 			return middle
 
-		elif key > mylist[middle]
+		elif key > mylist[middle]:
 			return _binary_search(mylist, key, middle +1, right)
 
 		else:
