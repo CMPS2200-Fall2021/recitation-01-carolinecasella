@@ -38,6 +38,7 @@ def _binary_search(mylist, key, left, right):
 	Returns:
 	  index of key in mylist, or -1 if not present.
 	"""
+	my_list = []
 	if left <= right:
 		middle = (left+right)//2
 
